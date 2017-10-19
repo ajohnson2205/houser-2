@@ -6,4 +6,4 @@ LEFT JOIN
   users
     ON properties.user_id = users.user_id
 WHERE
-  users.user_id = 2
+  users.user_id = 1

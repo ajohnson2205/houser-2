@@ -40,14 +40,14 @@ app.get('/api/cats', testController.getCats)
 
 //user endpoints
 
-app.post('/api/auth/login', userController.login)
-app.post('/api/auth/user', userController.register)
-app.post('/api/auth/logout', userController.logout)
+// app.post('/api/auth/login', userController.login)
+// app.post('/api/auth/user', userController.register)
+// app.post('/api/auth/logout', userController.logout)
 
 
 //property endpoints
 
 app.get('/api/properties', propertyController.getAllProperties)
-app.get('/api/properties/filter', propertyController.getFilteredProperties
-app.post('/api/properties', propertyController.createNewProperty)
-app.delete('/api/properties/:id', propertyController.deleteProperty)
+// app.get('/api/properties/filter', propertyController.getFilteredProperties
+// app.post('/api/properties', propertyController.createNewProperty)
+// app.delete('/api/properties/:id', propertyController.deleteProperty)
