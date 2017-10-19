@@ -49,5 +49,5 @@ app.get('/api/cats', testController.getCats)
 
 app.get('/api/properties', propertyController.getAllProperties)
 // app.get('/api/properties/filter', propertyController.getFilteredProperties
-// app.post('/api/properties', propertyController.createNewProperty)
+app.post('/api/properties', propertyController.createNewProperty)
 // app.delete('/api/properties/:id', propertyController.deleteProperty)
