@@ -1,5 +1,8 @@
 module.exports = {
   sayHello: (req, res) => {
+    req.session.user = "alex";
+    console.log(req.session)
+    // console.log(req);
     res.status(200).send("Hello!")
   },
 
@@ -10,6 +13,7 @@ module.exports = {
   getCats: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
 
+    console.log(req.session)
     dbInstance.get_all_cats()
       .then(cats => { res.status(200).send(cats) })
       .catch( err => {

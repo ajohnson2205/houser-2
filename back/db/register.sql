@@ -7,6 +7,8 @@ INSERT INTO
 
 VALUES
   (
-    'A-new-user',
-    'A-password-of-sort'
+    $1, $2
   )
+
+RETURNING
+  user_id, username

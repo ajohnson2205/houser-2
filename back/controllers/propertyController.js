@@ -1,19 +1,22 @@
 module.exports = {
+
+//think this is done
   getAllProperties: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
 
-    dbInstance.getAllProperties()
+    dbInstance.getAllProperties([req.session.user.id])
       .then(properties => { res.status(200).send(properties) })
-      .catch( err => {
+      .catch(err => {
         console.log(err);
         res.status(500).send(err);
       });
   },
 
+//think this is done
   getFilteredProperties: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
 
-    dbInstance.getFilteredProperties()
+    dbInstance.getFilteredProperties([req.session.user.id, req.query.desired_rent])
       .then(properties => { res.status(200).send(properties) })
       .catch( err => {
         console.log(err);
@@ -21,6 +24,7 @@ module.exports = {
       });
   },
 
+//completely done
   createNewProperty: (req, res, next) => {
     console.log("Creating new property", req.body);
     const dbInstance = req.app.get('db');
@@ -31,6 +35,7 @@ module.exports = {
       .catch((err) => res.status(500).send(err))
   },
 
+//completely done
   deleteProperty: ( req, res, next ) => {
     console.log("Deleting property", req.body);
     const dbInstance = req.app.get('db');

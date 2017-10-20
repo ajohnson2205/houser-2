@@ -6,6 +6,6 @@ LEFT JOIN
   users
     ON properties.user_id = users.user_id
 WHERE
-  users.user_id = 2
+  properties.user_id = $1
     AND
-      properties.desired_rent <= 100
+      properties.desired_rent <= $2
