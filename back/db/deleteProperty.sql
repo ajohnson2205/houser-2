@@ -1,4 +1,4 @@
 DELETE FROM
   properties
 WHERE
-  property_id = 1
+  property_id = $1
