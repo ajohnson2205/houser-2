@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import logoLarge from "../assets/logo-large.png"
-
+import logoLarge from "../assets/logo-large.png";
+import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 class Login extends Component {
   constructor(props) {
@@ -12,6 +13,25 @@ class Login extends Component {
     }
   }
 
+  registerUser = () => {
+    let {username, password} = this.state;
+    axios
+      .post('http://localhost:1337/api/auth/user', {
+        username,
+        password
+      })
+  }
+
+  loginUser = () => {
+    let {username, password} = this.state;
+    axios
+      .post('http://localhost:1337/api/auth/login', {
+        username,
+        password
+      })
+  }
+
+
   render() {
     return(
       <div className='login-main'>
@@ -20,24 +40,26 @@ class Login extends Component {
           <div className='user-input'>
             <label for="usernameInput">User Name</label>
             <input
-              ref="usernameInput"
               type="text"
               placeholder="Username"
-              onChange={(e) => this.setState({username: this.refs.usernameInput.value})}
+              onChange={(e) => this.setState({username: e.target.value})}
               ></input>
           </div>
           <div className='user-password'>
             <label for="passwordInput">Password</label>
             <input
-              ref="passwordInput"
               type="text"
               placeholder="Password"
-              onChange={(e) => this.setState({password: this.refs.passwordInput.value})}
+              onChange={(e) => this.setState({password: e.target.value})}
             ></input>
           </div>
           <div className="login-and-register">
-            <button>Login</button>
-            <button>Register</button>
+            <Link to="/dashboard">
+              <button onClick={this.loginUser}>Login</button>
+            </Link>
+            <Link to="/dashboard">
+              <button onClick={this.registerUser}>Register!</button>
+            </Link>
           </div>
         </div>
       </div>

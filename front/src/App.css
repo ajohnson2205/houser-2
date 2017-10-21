@@ -4,6 +4,17 @@ div h1 {
   border-color: rgba(0, 0, 0, 0.5);
 }
 
+.dasboard-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dashboard-top {
+  display: flex;
+  flex-direction: column;
+}
+
 .login-center {
   background-color: rgb(255, 255, 255);
   width: 60%;

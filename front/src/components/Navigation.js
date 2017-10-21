@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom'
-
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 import '../normalize.css'
 import '../App.css'
@@ -16,6 +16,12 @@ class Navigation extends Component {
     }
   }
 
+
+	logoutUser = () => {
+		axios
+			.post('http://localhost:1337/api/auth/logout')
+	}
+
   render() {
     return(
       <div className="navigation-div">
@@ -24,9 +30,13 @@ class Navigation extends Component {
 				</Link>
 				<Link to="/dashboard">
         	<h1>Houser</h1>
-				</Link>	
+				</Link>
         <h1>Dashboard</h1>
-        <h1>Logout</h1>
+				<Link to="/">
+					<button
+						onClick={this.logoutUser}
+						>Logout</button>
+				</Link>
       </div>
     )
   }

@@ -18,9 +18,26 @@ class Dashboard extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <Navigation />
+        <div className="dashboard-top">
+          <div>
+            <button>Add new property</button>
+          </div>
+          <div className="dashboard-options">
+            <p>List properties with "desired rent" greater than: $</p>
+            <input
+              type="text"
+              placeholder="0">
+            </input>
+            <button>Filter</button>
+            <button>Reset</button>
+          </div>
+        </div>
+
+
+
         <h1>This is a Dashboard cat</h1>
         <p>Here is a paragraph</p>
         <ul>
