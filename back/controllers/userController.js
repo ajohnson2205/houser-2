@@ -14,8 +14,9 @@ module.exports = {
     console.log("You have been logged in!")
 
     dbInstance.login([req.body.username, req.body.password])
-    .then(response => { req.session.user = response;
-      console.log(req.session.user);
+    .then(response => {
+      req.session.user = response[0];
+      console.log('xxxxxx', req.session.user);
     res.status(200).send(response)})
     .catch((error) => {console.log(error);
     res.status(500).send(error)})

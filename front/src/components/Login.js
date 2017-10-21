@@ -28,6 +28,15 @@ class Login extends Component {
       .post('http://localhost:1337/api/auth/login', {
         username,
         password
+      }).then(() => {
+        console.log('this.props', this.props)
+        this.props.history.push('/dashboard')
+        // axios
+        //   .get('http://localhost:1337/api/properties')
+        //   .then((response) => {
+        //     this.setState({properties: response.data});
+        //     console.log("Here is the response: ", response)
+        //   } )
       })
   }
 
@@ -54,9 +63,9 @@ class Login extends Component {
             ></input>
           </div>
           <div className="login-and-register">
-            <Link to="/dashboard">
+
               <button onClick={this.loginUser}>Login</button>
-            </Link>
+
             <Link to="/dashboard">
               <button onClick={this.registerUser}>Register!</button>
             </Link>

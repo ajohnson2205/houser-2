@@ -3,9 +3,13 @@ module.exports = {
 //think this is done
   getAllProperties: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
+    console.log('rs', req.session)
 
     dbInstance.getAllProperties([req.session.user.user_id])
-      .then(properties => { res.status(200).send(properties) })
+      .then(properties => {
+        console.log('properties', properties)
+        res.status(200).send(properties)
+      })
       .catch(err => {
         console.log(err);
         res.status(500).send(err);

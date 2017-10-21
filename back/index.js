@@ -39,6 +39,8 @@ app.use( session({
 
 app.use((req, res, next) => createInitialSession(req, res, next));
 
+app.use(express.static('../front/build'))
+
 
 
 

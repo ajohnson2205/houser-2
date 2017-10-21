@@ -51,6 +51,9 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className="dashboard-bottom">
+          {this.state.properties.map(property => {
+            return <div>{property.city}</div>
+          })}
 
         </div>
       </div>
