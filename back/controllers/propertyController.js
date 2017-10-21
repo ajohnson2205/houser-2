@@ -4,7 +4,7 @@ module.exports = {
   getAllProperties: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
 
-    dbInstance.getAllProperties([req.session.user.id])
+    dbInstance.getAllProperties([req.session.user.user_id])
       .then(properties => { res.status(200).send(properties) })
       .catch(err => {
         console.log(err);

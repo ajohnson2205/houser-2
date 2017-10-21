@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom'
-
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 import Navigation from './Navigation.js'
 
@@ -13,9 +13,24 @@ class Dashboard extends Component {
     super(props);
 
     this.state = {
-      dataz: ""
+      properties: []
     }
   }
+
+
+  getAllProperties = () => {
+    axios
+      .get('http://localhost:1337/api/properties')
+      .then((response) => {
+        this.setState({properties: response.data});
+        console.log("Here is the response: ", response)
+      } )
+  }
+
+  componentWillMount() {
+    this.getAllProperties();
+  }
+
 
   render() {
     return (
@@ -35,16 +50,9 @@ class Dashboard extends Component {
             <button>Reset</button>
           </div>
         </div>
+        <div className="dashboard-bottom">
 
-
-
-        <h1>This is a Dashboard cat</h1>
-        <p>Here is a paragraph</p>
-        <ul>
-          <li>These are items</li>
-          <li>These are items</li>
-          <li>These are items</li>
-        </ul>
+        </div>
       </div>
     )
   }
