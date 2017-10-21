@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom'
+
 
 import '../normalize.css'
 import '../App.css'
@@ -17,10 +19,14 @@ class Navigation extends Component {
   render() {
     return(
       <div className="navigation-div">
-        <img src={logo} />
-        <h1>Houser</h1>
-        <h2>Dashboard</h2>
-        <h3>Logout</h3>
+				<Link to="/dashboard">
+					<img src={logo} />
+				</Link>
+				<Link to="/dashboard">
+        	<h1>Houser</h1>
+				</Link>	
+        <h1>Dashboard</h1>
+        <h1>Logout</h1>
       </div>
     )
   }
