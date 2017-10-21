@@ -1,25 +1,10 @@
-In my index.js on the backend:
-// //DB SETUP//
-var dbSetup = require('./services/dbSetup'); //Q. Is this dbSetup file necessary any time you have a database? A. It's a good idea to include it when you have SQL databases.
-dbSetup.run();
+COLORS
 
+bright green: 99, 234, 120
+light green: 151, 201, 174
+mid green: 52, 133, 91
+dark green: 43, 64, 56
+gray: 212, 212, 212
+pink: 255, 174, 177
 
-
-dbSetup.js  --- living with index.js or in service folder
-
-
-// APP AND CONFIG REQUIRE //
-var db = app.get('db');
-// INITIALIZE FUNCTION //
-module.exports = {
-  run: function() {
-    console.log('Initializing database');
-    db.initialize.tables_initialize(function(err, table) {
-      if (err) {
-        console.log('Some tables failed to create');
-      } else {
-        console.log('Tables successfully initialized');
-      }
-    });
-  }
-};
+progress bubble: 166, 208, 186

@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import Navigation from './Navigation.js'
 
+import '../normalize.css'
+import '../App.css'
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);

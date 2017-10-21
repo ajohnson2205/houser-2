@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+import '../normalize.css'
+import '../App.css'
+
+import logo from "../assets/logo-small.png"
 
 class Navigation extends Component {
 	constructor(props) {
@@ -9,10 +13,15 @@ class Navigation extends Component {
       dataz: ""
     }
   }
-  
+
   render() {
     return(
-      <h1>Here there be naviation!</h1>
+      <div className="navigation-div">
+        <img src={logo} />
+        <h1>Houser</h1>
+        <h2>Dashboard</h2>
+        <h3>Logout</h3>
+      </div>
     )
   }
 }
