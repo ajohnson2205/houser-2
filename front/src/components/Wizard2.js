@@ -8,7 +8,10 @@ class Wizard2 extends Component {
     super();
 
     this.state = {
-      dataz: ""
+      address: "",
+      city: "",
+      state: "",
+      zip: ""
     }
   }
 
@@ -16,10 +19,26 @@ class Wizard2 extends Component {
     return(
       <div>
         <h1>Step 2</h1>
-        <input type="text" placeholder="Address"></input>
-        <input type="text" placeholder="City"</input>
-        <input type="text" placeholder="State"></input>
-        <input type="text" placeholder="ZIP"></input>
+        <input
+          type="text"
+          placeholder="Address"
+          onChange={(e) => {this.setState({address: e.target.value})}}
+          ></input>
+        <input
+          type="text"
+          placeholder="City"
+          onChange={(e) => {this.setState({city: e.target.value})}}
+          ></input>
+        <input
+          type="text"
+          placeholder="State"
+          onChange={(e) => {this.setState({state: e.target.value})}}
+          ></input>
+        <input
+          type="text"
+          placeholder="ZIP"
+          onChange={(e) => {this.setState({zip: e.target.value})}}
+          ></input>
         <Link to="/wizard/1">
           <button>Previous Step</button>
         </Link>

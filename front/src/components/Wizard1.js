@@ -8,16 +8,27 @@ class Wizard1 extends Component {
     super();
 
     this.state = {
-      dataz: ""
+      propertyName: "",
+      propertyDescription: ""
     }
   }
+
+  handleChange
 
   render() {
     return(
       <div>
         <h1>Step 1</h1>
-        <input type="text" placeholder="Property Name"></input>
-        <input type="text" placeholder="Property Description"></input>
+        <input
+          type="text"
+          placeholder="Property Name"
+          onChange={(e) => {this.setState({propertyName: e.target.value})}}
+          ></input>
+        <input
+          type="text"
+          placeholder="Property Description"
+          onChange={(e) => {this.setState({propertyDescription: e.target.value})}}  
+          ></input>
         <Link to="/wizard/2">
           <button>Next Step</button>
         </Link>
