@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 
-class Wizard1 extends Component {
+class Wizard3 extends Component {
   constructor() {
     super();
 
@@ -15,10 +15,12 @@ class Wizard1 extends Component {
   render() {
     return(
       <div>
-        <h1>Step 1</h1>
-        <input type="text" placeholder="Property Name"></input>
-        <input type="text" placeholder="Property Description"></input>
+        <h1>Step 3</h1>
+        <input type="text" placeholder="Image URL"></input>
         <Link to="/wizard/2">
+          <button>Previous Step</button>
+        </Link>
+        <Link to="/wizard/4">
           <button>Next Step</button>
         </Link>
       </div>
@@ -26,4 +28,4 @@ class Wizard1 extends Component {
   }
 }
 
-export default Wizard1;
+export default Wizard3;

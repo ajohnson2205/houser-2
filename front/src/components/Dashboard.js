@@ -38,7 +38,9 @@ class Dashboard extends Component {
         <Navigation />
         <div className="dashboard-top">
           <div>
-            <button>Add new property</button>
+            <Link to="/wizard/1">
+              <button>Add new property</button>
+            </Link>
           </div>
           <div className="dashboard-options">
             <p>List properties with "desired rent" greater than: $</p>
@@ -55,6 +57,13 @@ class Dashboard extends Component {
             return <div>{property.city}</div>
           })}
 
+        </div>
+        <div>
+          <h1>To Do</h1>
+          <ol>
+            <li>Make sure that the cancel button clears out the Redux store (in addition to routing back to the dashboard [which it does currently])</li>
+            <li>Make sure the complete button writes to the Redux store</li>
+          </ol>
         </div>
       </div>
     )
