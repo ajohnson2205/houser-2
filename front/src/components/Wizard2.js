@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { saveWizardTwo } from '../actions/wizardActions'
 
 
 class Wizard2 extends Component {
@@ -43,11 +46,15 @@ class Wizard2 extends Component {
           <button>Previous Step</button>
         </Link>
         <Link to="/wizard/3">
-          <button>Next Step</button>
+          <button onClick={() => this.props.saveWizardTwo(this.state)}>Next Step</button>
         </Link>
       </div>
     )
   }
 }
 
-export default Wizard2;
+const mapDispatchToProps = {
+  saveWizardTwo: saveWizardTwo
+}
+
+export default connect(null, mapDispatchToProps)(Wizard2);

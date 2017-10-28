@@ -3,7 +3,7 @@ module.exports = {
 //think this is done
   getAllProperties: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
-    console.log('rs', req.session)
+    console.log('rXXXXXXXXs', req.session)
 
     dbInstance.getAllProperties([req.session.user.user_id])
       .then(properties => {

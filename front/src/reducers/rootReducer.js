@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 import wizard from './wizardReducer';
 
-const rootReducer = conmbineReducers({
+const rootReducer = combineReducers({
   wizard
 });
 

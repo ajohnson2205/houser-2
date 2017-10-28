@@ -1,3 +1,1 @@
-export default {
-	wizard: []
-};
+export default {};
