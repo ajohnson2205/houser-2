@@ -7,12 +7,12 @@ import { saveWizardOne } from '../actions/wizardActions'
 
 
 class Wizard1 extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      propertyName: "",
-      propertyDescription: ""
+      propertyName: this.props.propertyName || "",
+      propertyDescription: this.props.propertyDescription || ""
     }
   }
 

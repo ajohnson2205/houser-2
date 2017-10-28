@@ -7,14 +7,14 @@ import { saveWizardTwo } from '../actions/wizardActions'
 
 
 class Wizard2 extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      address: "",
-      city: "",
-      state: "",
-      zip: ""
+      address: this.props.address || "",
+      city: this.props.city || "",
+      state: this.props.state || "",
+      zip: this.props.zip || ""
     }
   }
 
@@ -26,21 +26,25 @@ class Wizard2 extends Component {
           type="text"
           placeholder="Address"
           onChange={(e) => {this.setState({address: e.target.value})}}
+          value={this.state.address || this.props.address}
           ></input>
         <input
           type="text"
           placeholder="City"
           onChange={(e) => {this.setState({city: e.target.value})}}
+          value={this.state.city || this.props.city}
           ></input>
         <input
           type="text"
           placeholder="State"
           onChange={(e) => {this.setState({state: e.target.value})}}
+          value={this.state.state || this.props.state}
           ></input>
         <input
           type="text"
           placeholder="ZIP"
           onChange={(e) => {this.setState({zip: e.target.value})}}
+          value={this.state.zip  || this.props.zip}
           ></input>
         <Link to="/wizard/1">
           <button>Previous Step</button>
