@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import { saveWizardThree } from '../actions/wizardActions'
 
-import {connect} from 'react-redux';
 
 class Wizard3 extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      imageUrl: ""
+      imageUrl: this.props.imageUrl || ""
     }
   }
 
@@ -23,12 +23,15 @@ class Wizard3 extends Component {
           type="text"
           placeholder="Image URL"
           onChange={(e) => {this.setState({imageUrl: e.target.value})}}
+          value={this.state.imageUrl || this.props.imageUrl}
           ></input>
         <Link to="/wizard/2">
           <button>Previous Step</button>
         </Link>
         <Link to="/wizard/4">
-          <button>Next Step</button>
+          <button
+            onClick={() => this.props.saveWizardThree(this.state)}
+            >Next Step</button>
         </Link>
       </div>
     )
@@ -38,7 +41,7 @@ class Wizard3 extends Component {
 
 const mapStateToProps = state => {
   return {
-    imageUrl: state.wizard.imageUrl,
+    imageUrl: state.wizard.imageUrl
   }
 }
 

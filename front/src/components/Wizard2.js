@@ -47,7 +47,9 @@ class Wizard2 extends Component {
           value={this.state.zip  || this.props.zip}
           ></input>
         <Link to="/wizard/1">
-          <button>Previous Step</button>
+          <button
+            onClick={() => this.props.saveWizardTwo(this.state)}
+            >Previous Step</button>
         </Link>
         <Link to="/wizard/3">
           <button onClick={() => this.props.saveWizardTwo(this.state)}>Next Step</button>
@@ -57,8 +59,17 @@ class Wizard2 extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    address: state.wizard.address,
+    city: state.wizard.city,
+    state: state.wizard.state,
+    zip: state.wizard.zip
+  }
+}
+
 const mapDispatchToProps = {
   saveWizardTwo: saveWizardTwo
 }
 
-export default connect(null, mapDispatchToProps)(Wizard2);
+export default connect(mapStateToProps, mapDispatchToProps)(Wizard2);

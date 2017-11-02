@@ -13,6 +13,12 @@ export default function wizard(state = initialState, action) {
     case WRITE_WIZARD_3:
       console.log('WW3', action)
       return Object.assign({}, state, action.payload)
+    case WRITE_WIZARD_4:
+      console.log('WW4', action)
+      return Object.assign({}, state, action.payload)
+    case WRITE_WIZARD_5:
+      console.log('WW5', action)
+      return Object.assign({}, state, action.payload)
     default:
       return state;
   }
