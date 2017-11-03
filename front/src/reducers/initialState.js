@@ -8,6 +8,6 @@ export default {
   imageUrl: '',
   mortgageTotal: '',
   mortgageMonthly: '',
-  desiredRent: '',
+  desiredRent: 10000,
   UserId: 2
 };

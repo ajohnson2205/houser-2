@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 //Get Redux going!
 import {connect} from 'react-redux';
 import {saveWizardFive} from '../actions/wizardActions'
+import {resetStore} from '../actions/wizardActions'
 
 //axios
 import axios from 'axios';
@@ -37,7 +38,8 @@ class Wizard5 extends Component {
         desired_rent,
         user_id
 
-      })
+      });
+    this.props.resetStore()
   }
 
   render() {
@@ -77,7 +79,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  saveWizardFive: saveWizardFive
+  saveWizardFive: saveWizardFive,
+  resetStore: resetStore
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wizard5);

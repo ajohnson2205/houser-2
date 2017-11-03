@@ -5,7 +5,8 @@ import {
   WRITE_WIZARD_4,
   WRITE_WIZARD_5,
   WRITE_LOAN_FIELD,
-  WRITE_MORTGAGE_FIELD
+  WRITE_MORTGAGE_FIELD,
+  RESET_STORE
 }
   from './actionTypes';
 
@@ -60,6 +61,13 @@ export function writeLoanField (data) {
 export function writeMortgageField (data) {
   return {
     type: WRITE_MORTGAGE_FIELD,
+    payload: data
+  }
+}
+
+export function resetStore (data) {
+  return {
+    type: RESET_STORE,
     payload: data
   }
 }
