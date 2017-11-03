@@ -7,17 +7,19 @@ import {Link} from 'react-router-dom';
 //Get Redux going!
 import {connect} from 'react-redux'
 import {saveWizardFour} from '../actions/wizardActions'
+import {writeLoanField} from '../actions/wizardActions'
+import {writeMortgageField} from '../actions/wizardActions'
 
 
 class Wizard4 extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loanAmount: "",
-      monthlyMortgage: ""
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //
+  //   this.state = {
+  //     loanAmount: this.props.loanAmount,
+  //     monthlyMortgage: ""
+  //   }
+  // }
 
 
 
@@ -29,12 +31,12 @@ class Wizard4 extends Component {
         <input
           type="text"
           placeholder="Loan Amount"
-          onClick={(e) => {this.setState({loanAmount: e.target.value})}}
+          onChange={(e) => {this.props.writeLoanField({mortgageTotal: e.target.value})}}
           ></input>
         <input
           type="text"
           placeholder="Monthly Mortgage"
-          onClick={(e) => {this.setState({monthlyMortgage: e.target.value})}}
+          onChange={(e) => {this.props.writeMortgageField({mortgageMonthly: e.target.value})}}
           ></input>
         <Link to="/wizard/3">
           <button
@@ -61,16 +63,9 @@ class Wizard4 extends Component {
 
 
 
-
-const mapStateToProps = state => {
-  return {
-    loanAmount: state.wizard.loanAmount,
-    monthlyMortgage: state.wizard.monthlyMortgage
-  }
-}
-
 const mapDispatchToProps = {
-  saveWizardFour: saveWizardFour
+  writeLoanField: writeLoanField,
+  writeMortgageField: writeMortgageField
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Wizard4);
+export default connect(null, mapDispatchToProps)(Wizard4);

@@ -1,5 +1,13 @@
 import initialState from './initialState';
-import {WRITE_WIZARD_1, WRITE_WIZARD_2, WRITE_WIZARD_3, WRITE_WIZARD_4, WRITE_WIZARD_5} from '../actions/actionTypes';
+import {
+  WRITE_WIZARD_1,
+  WRITE_WIZARD_2,
+  WRITE_WIZARD_3,
+  WRITE_WIZARD_4,
+  WRITE_WIZARD_5,
+  WRITE_LOAN_FIELD,
+  WRITE_MORTGAGE_FIELD
+} from '../actions/actionTypes';
 
 export default function wizard(state = initialState, action) {
   let newState;
@@ -19,6 +27,12 @@ export default function wizard(state = initialState, action) {
     case WRITE_WIZARD_5:
       console.log('WW5', action)
       return Object.assign({}, state, action.payload)
+    case WRITE_LOAN_FIELD:
+      console.log('Writing loan field', action)
+      return Object.assign({}, state, action.payload)
+    case WRITE_MORTGAGE_FIELD:
+        console.log('Writing mortgage field', action)
+        return Object.assign({}, state, action.payload)
     default:
       return state;
   }

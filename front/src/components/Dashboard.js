@@ -23,12 +23,12 @@ class Dashboard extends Component {
       .get('http://localhost:1337/api/properties')
       .then((response) => {
         this.setState({properties: response.data});
-        console.log("Here is the response: ", response)
+        // console.log("Here is the response: ", response)
       } )
   }
 
-  componentWillMount() {
-    this.getAllProperties();
+  componentDidMount() {
+    setTimeout(this.getAllProperties(), 500);
   }
 
 

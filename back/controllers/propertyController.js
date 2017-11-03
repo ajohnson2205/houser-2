@@ -7,7 +7,7 @@ module.exports = {
 
     dbInstance.getAllProperties([req.session.user.user_id])
       .then(properties => {
-        console.log('properties', properties)
+        // console.log('properties', properties)
         res.status(200).send(properties)
       })
       .catch(err => {

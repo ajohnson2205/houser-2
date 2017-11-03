@@ -3,7 +3,10 @@ import {
   WRITE_WIZARD_2,
   WRITE_WIZARD_3,
   WRITE_WIZARD_4,
-  WRITE_WIZARD_5}
+  WRITE_WIZARD_5,
+  WRITE_LOAN_FIELD,
+  WRITE_MORTGAGE_FIELD
+}
   from './actionTypes';
 
 
@@ -43,6 +46,20 @@ export function saveWizardFour (data) {
 export function saveWizardFive (data) {
   return {
     type: WRITE_WIZARD_5,
+    payload: data
+  }
+}
+
+export function writeLoanField (data) {
+  return {
+    type: WRITE_LOAN_FIELD,
+    payload: data
+  }
+}
+
+export function writeMortgageField (data) {
+  return {
+    type: WRITE_MORTGAGE_FIELD,
     payload: data
   }
 }
