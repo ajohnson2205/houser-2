@@ -50,11 +50,11 @@ class Wizard5 extends Component {
         <Link to="/wizard/4">
           <button>Previous Step</button>
         </Link>
-        {/* <Link to="/dashboard"> */}
+        <Link to="/dashboard">
           <button
             onClick={this.sendDataToStore}
             >Complete</button>
-        {/* </Link> */}
+        </Link>
       </div>
     )
   }

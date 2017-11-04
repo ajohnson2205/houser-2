@@ -26,11 +26,16 @@ class Dashboard extends Component {
         // console.log("Here is the response: ", response)
       } )
   }
+  
 
   componentDidMount() {
-    setTimeout(this.getAllProperties(), 500);
+    this.getAllProperties();
   }
 
+
+  componentWillReceiveProps() {
+    this.getAllProperties();
+  }
 
   render() {
     return (
